@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #f6f6f6;
+}
+#path {
+  clip-path: ellipse(75% 100% at 50% 0%);
+}
+#bg {
+  transform: translateY(-75px);
+}
+
+.swiper-button-next:after {
+  content: url("./assets/img/swipper-right.png") !important;
+}
+
+.swiper-button-prev:after {
+  content: url("./assets/img/swipper-left.png") !important;
+}
