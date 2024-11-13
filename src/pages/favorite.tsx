@@ -1,7 +1,6 @@
 import { FC, useState } from "react";
 import Header from "../components/header/header";
 import Navbar from "../components/navbar/navbar";
-import Footer from "../components/footer/footer";
 
 import First from "../assets/img/firstBody.png";
 import FirstHira from "../assets/img/firstBodyHira.png";

@@ -6,7 +6,6 @@ import Bg from "../assets/svg/bg.svg";
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import { useDispatch } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import { InputMask } from "@react-input/mask";
 import { IoPersonOutline } from "react-icons/io5";
@@ -18,10 +17,10 @@ interface LoginResponse {
 }
 
 const Login: FC = () => {
-  const [input, setInput] = useState<string>("");
+  let [input, setInput] = useState<string>("");
+  console.log(input);
 
   const navigate = useNavigate();
-  // const dispatch = useDispatch();
 
   const handleAdd = () => {
     console.log(input);
@@ -40,15 +39,11 @@ const Login: FC = () => {
       })
         .then((res) => res.json())
         .then((json: LoginResponse) => {
-          // Type the response here
           console.log(json);
           if (json.token) {
             localStorage.setItem("token", json.token);
+            localStorage.setItem("Phone-number", input);
             navigate("/register");
-            // dispatch({
-            //   type: "login",
-            //   payload: json.token,
-            // });
           } else {
             alert("Invalid login");
           }
@@ -61,7 +56,7 @@ const Login: FC = () => {
   };
 
   return (
-    <div className="flex flex-col ">
+    <div className="flex flex-col bg-[#fca311]">
       <Header />
       <div
         id="path"

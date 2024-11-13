@@ -1,8 +1,7 @@
 import { FC, useState } from "react";
 import Header from "../components/header/header";
 
-import { Link, NavLink, useNavigate } from "react-router-dom";
-import { IoIosArrowBack } from "react-icons/io";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import OtpInput from "react-otp-input";
@@ -16,7 +15,7 @@ const Sms: FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col ">
+    <div className="flex flex-col bg-[#fca311]">
       <Header />
       <div
         id="path"
@@ -74,6 +73,7 @@ const Sms: FC = () => {
           <button
             onClick={() => {
               if (otp.length === 4) {
+                toast.success("Siz Muvafaqiyatli royhatdan otdingiz ");
                 navigate("/");
               }
             }}

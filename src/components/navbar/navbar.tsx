@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const Navbar: FC = () => {
   return (
-    <div className=" fixed  top-0 left-0 py-[38px] px-[25px] bg-white h-full w-[345px] overflow-auto flex flex-col gap-[40px] z-10">
+    <div className=" fixed  top-0 left-0 py-[38px] px-[25px] bg-white h-full w-[345px] overflow-auto flex flex-col gap-[40px] z-20">
       <img className="w-[30px] cursor-pointer" src={Burger} alt="Buregr" />
       <div className="flex flex-col gap-[20px]">
         <Link to="/">

@@ -9,7 +9,7 @@ import { IoPersonOutline } from "react-icons/io5";
 const Header: FC = () => {
   const token = localStorage.getItem("token");
   return (
-    <div className="w-full flex items-center justify-between px-[90px] py-[30px] bg-white fixed z-10 ">
+    <div className="w-full flex items-center justify-between px-[90px] py-[30px] bg-white fixed z-20 ">
       <div className=" flex items-center gap-[100px]">
         <Link to="/">
           <img src={Logo} alt="Logo" />

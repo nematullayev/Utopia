@@ -6,10 +6,8 @@ import Bg from "../assets/svg/bg.svg";
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import { useDispatch } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import { InputMask } from "@react-input/mask";
-import { IoPersonOutline } from "react-icons/io5";
 import { RiLockPasswordLine } from "react-icons/ri";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -20,8 +18,9 @@ interface LoginResponse {
 const Regester: FC = () => {
   const [input, setInput] = useState<string>("");
 
+  const phoneNumber = localStorage.getItem("Phone-number");
+
   const navigate = useNavigate();
-  // const dispatch = useDispatch();
 
   const handleAdd = () => {
     console.log(input);
@@ -40,17 +39,11 @@ const Regester: FC = () => {
       })
         .then((res) => res.json())
         .then((json: LoginResponse) => {
-          // Type the response here
           console.log(json);
-          if (json.token) {
-            localStorage.setItem("token", json.token);
+          if (input == phoneNumber) {
             navigate("/sms");
-            // dispatch({
-            //   type: "login",
-            //   payload: json.token,
-            // });
           } else {
-            alert("Invalid login");
+            toast.error("Telefon Raqami notogri kiritilgan");
           }
         })
         .catch((error) => {

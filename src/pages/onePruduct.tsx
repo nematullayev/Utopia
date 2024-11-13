@@ -25,7 +25,6 @@ import { SlSocialInstagram } from "react-icons/sl";
 import { BsTelephone } from "react-icons/bs";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { AiOutlineHome } from "react-icons/ai";
-import FavoriteSecondBody from "../components/favoriteSecondBody/favoriteSecondBody";
 
 interface Product {
   id: string;

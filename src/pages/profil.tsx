@@ -9,11 +9,13 @@ import Header from "../components/header/header";
 import Navbar from "../components/navbar/navbar";
 import Footer from "../components/footer/footer";
 import { CiLogout } from "react-icons/ci";
+import { RiAccountCircleLine } from "react-icons/ri";
 
 const Profil: React.FC = () => {
   const [name, setName] = useState("");
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
+  const Phone = localStorage.getItem("Phone-number");
 
   const userName: string | null = localStorage.getItem("name");
 
@@ -23,6 +25,7 @@ const Profil: React.FC = () => {
 
   const handleLogOut = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("Phone-number");
     toast.loading("We are logging out");
     setTimeout(() => {
       navigate("/");
@@ -40,24 +43,33 @@ const Profil: React.FC = () => {
     <div className=" relative">
       <Header />
       <Navbar />
-      <div className=" w-[1111px] mx-auto flex pt-[158px] ml-[300px] mb-[100px]">
+      <div className=" w-[1211px] mx-auto flex pt-[158px] ml-[300px] mb-[100px]">
         <div className="mt-[68px] ml-[75px]">
           <h1 className="text-[#161A1D] text-[30px] font-medium mb-[54px]">
             Мой аккаунт
           </h1>
-          <div className="bg-[white] p-[60px] flex gap-[182px] rounded-xl">
-            <div className="flex flex-col justify-between h-full gap-60 mr-20">
+          <div className="bg-[white] w-[1080px] p-[60px] flex gap-[22px] rounded-xl">
+            <div className="flex flex-col justify-between h-[820px] pr-[100px]  mr-20 border-r">
               <div className="flex flex-col gap-[35px]">
-                {/* <img src={MyAccount} alt="" />
-                <img src={MyAccount} alt="" />
-                <img src={MyAccount} alt="" />
-                <img src={MyAccount} alt="" />
-                <img src={MyAccount} alt="" />
-                <img src={MyAccount} alt="" />
-                <img src={MyAccount} alt="" /> */}
+                <div className="flex  gap-[10px] items-center ">
+                  <RiAccountCircleLine size={36} />
+                  <p className="text-2xl ">Мой профиль</p>
+                </div>
+                <div className="flex  gap-[10px] items-center ">
+                  <RiAccountCircleLine size={36} />
+                  <p className="text-2xl ">Мой профиль</p>
+                </div>
+                <div className="flex  gap-[10px] items-center ">
+                  <RiAccountCircleLine size={36} />
+                  <p className="text-2xl ">Мой профиль</p>
+                </div>
+                <div className="flex  gap-[10px] items-center ">
+                  <RiAccountCircleLine size={36} />
+                  <p className="text-2xl ">Мой профиль</p>
+                </div>
               </div>
               <button
-                className="flex items-end gap-[10px]"
+                className="flex items-center gap-[10px]"
                 onClick={handleLogOut}
               >
                 <CiLogout color="red" size={30} />
@@ -85,7 +97,7 @@ const Profil: React.FC = () => {
                 <input
                   className="bg-[#F3F3F3] rounded-md outline-none py-3 pl-[21px] text-[#999]"
                   type="text"
-                  placeholder="+998 99 895 90-95"
+                  placeholder={"+998" + Phone}
                   disabled={true}
                 />
               </div>
